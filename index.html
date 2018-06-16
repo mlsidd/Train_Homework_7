@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <!-- LINK TO FIREBASE GOES HERE -->
+  
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <!-- Jumbotron -->
+    <div class="jumbotron bg-dark">
+      <h1 class="text-center text-light">Trains</h1>
+    </div>
+    </div>
+    
+    <!-- Wells for displaying all train info -->
+        
+    <div class="row">
+      
+        <!-- Add Train Card-->
+        <div class="col-lg-3">
+          <div class="card">
+            <div class="card-heading">
+              <h3 class="card-title-alert"><span id="addTrain">Add Train</span></h3>
+            </div>
+            
+            <div class="card-body">
+              
+              <!-- Add Train Form -->
+              <form role="form" id="form-holder">
+                <div class="form-group row">
+                  <label for="name-input" class="text-danger">Train Name:</label>
+                  <input class="form-control" id="name-input" type="text">
+                </div>
+                <div class="form-group row">
+                  <label for="destination-input" class="text-danger">Destination:</label>
+                  <input class="form-control" id="destination-input" type="text">
+                </div>
+                <div class="form-group row">
+                  <label for="train-time-input" class="text-danger">Time of First Arrival:</label>
+                  <input class="form-control" id="train-time-input" type="time">
+                </div>
+                <div class="form-group row">
+                  <label for="frequency-input" class="text-danger">Frequency (min):</label>
+                  <input class="form-control" id="frequency-input" type="number"></textarea>
+                </div>
+                <button class="btn btn-primary" id="add-train" type="submit">Submit</button>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+        
+      <!-- Add results card-->
+      <div class="col-lg-7">
+        <div class="card">
+          <div class="card-heading">
+            <h3 class="card-title-alert"><span id="addTrain">Current Train Schedule</span></h3>
+          </div>
+          
+          <div class="card-body">
+            
+            <!-- Add Train Form -->
+            <table class="table" id="trainTable">
+                <thead>
+                  <tr>
+                    <th scope="col" id="train-name">Train Name</th>
+                    <th scope="col" id="destination">Destination</th>
+                    <th scope="col" id="frequency">Frequency (minutes)</th>
+                    <th scope="col" id="next-arrival">Next Arrival</th>
+                    <th scope="col" id="minutes-away">Minutes Away</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                      <th scope="row"></th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+          </div>
+        </div>
+      </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src= "javascript/logic.js"></script>
+  
+</body>
+</html>

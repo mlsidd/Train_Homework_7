@@ -1,0 +1,30 @@
+.card-body {
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:0px;
+}
+
+.form-control {
+    border-color:red;
+}
+
+.card {
+    margin-left: 20px;
+    border-color:red;
+    margin-bottom:20px;
+}
+.card-title-alert {
+    background-color:rgb(245, 177, 177);
+    height:50px;
+    position:relative;
+}
+
+#addTrain {
+    margin-left:30px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.jumbotron {
+    height:50px;
+}

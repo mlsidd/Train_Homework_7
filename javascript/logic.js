@@ -18,6 +18,7 @@
     var firstTrainOfDay = "";
     var minutesAway = "";
     var nextArrival = 0;
+    var formattedDate = "";
     console.log(nextArrival);
 
         
@@ -48,10 +49,10 @@
     var minutesAway = frequency - tRemainder;
     console.log("MINUTES TILL TRAIN: " + minutesAway);
     // Next Train
-    nextArrival = moment().add(minutesAway, "minutes");
+    nextArrivalCalculation = moment().add(minutesAway, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
-
-
+    nextArrival = nextArrivalCalculation.toLocaleString();
+    
       
       // Push the data from the input form into firebase database
       dataRef.ref().push({
@@ -69,11 +70,17 @@
       
       console.log(childSnapshot.val());
       
+      var getDate = childSnapshot.val().nextArrival;
+      var indexingDate = getDate.indexOf("GMT");
+      formattedDate = getDate.slice(0, indexingDate-4);
+      console.log(formattedDate);
+
+
       // add all data from firebase database to the html table
       $("#tableBody").append("<tr><td>" + childSnapshot.val().trainName + 
       "</td><td>" + childSnapshot.val().destination + 
       "</td><td>" + childSnapshot.val().frequency + 
-      "</td><td>" + childSnapshot.val().nextArrival + 
+      "</td><td>" + formattedDate + 
       "</td><td>" + childSnapshot.val().minutesAway +
       "</td> </tr>");
        
